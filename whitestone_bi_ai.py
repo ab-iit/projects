@@ -4,7 +4,7 @@ import numpy as np
 import time
 
 # --- Page Config ---
-st.set_page_config(page_title="WhiteStone Native AI", layout="wide")
+st.set_page_config(page_title="WhiteStone Prototype BI/AI", layout="wide")
 
 # --- Sidebar Navigation ---
 st.sidebar.title("WhiteStone Asset Management")
@@ -158,6 +158,7 @@ elif "Portfolio" in module:
     st.markdown("#### Recommended Allocation")
 
     st.bar_chart(pd.DataFrame(allocation, index=["Weight %"]).T)
+
 
 
 
