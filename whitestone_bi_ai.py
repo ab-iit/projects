@@ -1,4 +1,3 @@
-Food Revision:
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -156,4 +155,5 @@ elif "Portfolio" in module:
         st.error(msg)
         
     st.markdown("#### Recommended Allocation")
+
     st.bar_chart(pd.DataFrame(allocation, index=["Weight %"]).T)
