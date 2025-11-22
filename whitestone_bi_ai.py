@@ -129,16 +129,16 @@ elif "Portfolio" in module:
     vix = col3.number_input("Volatility Index (VIX)", 10.0, 50.0, 15.0)
     
     # The "Brain" Logic
-    if inflation > 7.0 and gdp_growth < 4.0:
-        regime = "STAGFLATION"
-        allocation = {"Equity": 30, "Debt": 20, "Gold": 50}
-        msg = "High Inflation + Low Growth detected. Overweight Gold."
-        color = "inverse"
-    elif vix > 30:
+     if vix > 30:
         regime = "MARKET CRASH"
         allocation = {"Equity": 10, "Debt": 80, "Gold": 10}
         msg = "High Volatility detected. Flight to safety (Bonds)."
         color = "error"
+    elif inflation > 7.0 and gdp_growth < 4.0:
+        regime = "STAGFLATION"
+        allocation = {"Equity": 30, "Debt": 20, "Gold": 50}
+        msg = "High Inflation + Low Growth detected. Overweight Gold."
+        color = "inverse"
     else:
         regime = "NORMAL GROWTH"
         allocation = {"Equity": 70, "Debt": 20, "Gold": 10}
@@ -157,3 +157,4 @@ elif "Portfolio" in module:
     st.markdown("#### Recommended Allocation")
 
     st.bar_chart(pd.DataFrame(allocation, index=["Weight %"]).T)
+
