@@ -129,7 +129,7 @@ elif "Portfolio" in module:
     vix = col3.number_input("Volatility Index (VIX)", 10.0, 50.0, 15.0)
     
     # The "Brain" Logic
-     if vix > 30:
+    if vix > 30:
         regime = "MARKET CRASH"
         allocation = {"Equity": 10, "Debt": 80, "Gold": 10}
         msg = "High Volatility detected. Flight to safety (Bonds)."
@@ -157,4 +157,5 @@ elif "Portfolio" in module:
     st.markdown("#### Recommended Allocation")
 
     st.bar_chart(pd.DataFrame(allocation, index=["Weight %"]).T)
+
 
