@@ -7,8 +7,8 @@ import time
 st.set_page_config(page_title="WhiteStone Native AI", layout="wide")
 
 # --- Sidebar Navigation ---
-st.sidebar.title("WhiteStone Asset Mgmt")
-st.sidebar.info("Native Python Implementation")
+st.sidebar.title("WhiteStone Asset Management")
+st.sidebar.info("Prototype Implementation")
 module = st.sidebar.radio(
     "Select Module:",
     ["1. Acquisition (ML Lead Scoring)", 
@@ -158,6 +158,7 @@ elif "Portfolio" in module:
     st.markdown("#### Recommended Allocation")
 
     st.bar_chart(pd.DataFrame(allocation, index=["Weight %"]).T)
+
 
 
 
