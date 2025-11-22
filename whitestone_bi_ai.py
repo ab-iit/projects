@@ -32,6 +32,7 @@ if "Acquisition" in module:
         'Website_Visits': [12, 8, 25, 2],
         'Email_Opens': [5, 3, 10, 0]
     })
+    leads_data.index = pd.RangeIndex(start=1, stop=len(leads_data) + 1, step=1)
     st.dataframe(leads_data)
 
     # 2. The "Algo" (Simulated Random Forest Logic)
@@ -157,5 +158,6 @@ elif "Portfolio" in module:
     st.markdown("#### Recommended Allocation")
 
     st.bar_chart(pd.DataFrame(allocation, index=["Weight %"]).T)
+
 
 
